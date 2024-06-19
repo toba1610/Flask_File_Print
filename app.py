@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 import data_handling as dt
+import print_pdf as ppf
 
 app = Flask(__name__)
 
@@ -21,6 +22,8 @@ def process():
 
     barcode = request.form['barcode']
     data_dict = dt.seperate_input(barcode)
+    file = dt.search_file(data_dict['serialnumber'], data_dict['certificat'])
+    ppf.print_pdf(file_path=file)
 
     return '''
             <h5>Barcode: {}</h5>

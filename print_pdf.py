@@ -25,10 +25,11 @@ def get_printer(printer_name: str) -> str:
 
 def print_pdf(file_path: str = None, printer_name: str = None) -> None:
 
-    file_path = os.path.abspath(file_path)
+    # file_path = os.path.abspath(file_path)
 
     if printer_name == None:
-        printer_name = jdp.read_JSON_Data('config.json', 'Config_Programm', 'Printer')
+        # printer_name = jdp.read_JSON_Data('config.json', 'Config_Programm', 'Printer')
+        printer_name = win32print.GetDefaultPrinter()
 
     printer = get_printer(printer_name=printer_name)
     
@@ -48,6 +49,8 @@ def print_pdf(file_path: str = None, printer_name: str = None) -> None:
 # print('Path')
 # print(os.path.normpath('//JM-SPOOL6/FollowME'))
 
+if __name__ == '__main__':
 
+    print_pdf('\\\\192.168.178.42\\Work\\Zertifikate\\Seriennummer_1234_Eichschein_5678.pdf')
 
 
