@@ -1,0 +1,8 @@
+{
+    "Parameter":
+    {
+        "Filescheme": "Seriennummer_<Serienummer>_Eichschein_<Eichschein>",
+        "Path_to_certificate": "\\\\192.168.178.42\\Work\\Zertifikate",
+        "Filetype": ".pdf"
+    }
+}
